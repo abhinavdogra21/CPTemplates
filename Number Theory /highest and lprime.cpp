@@ -24,3 +24,24 @@ void solve()
     }
    
 }
+
+//  optmised
+int hp[N];
+hp[0]=hp[1] = 1; 
+void solve()
+{
+   for(int i=2;i<=N;i++)
+   {
+     if(hp[i]==0)
+     { // purane wali mai true
+       // lete the isliye yaah 0 sai intiialize
+       // to ulta condition lagaya
+       hp[i]=i; 
+     
+        for(int j=2*i;j<=N;j+=i)
+        {
+          hp[j]=i;
+        }
+     }
+   }
+}
